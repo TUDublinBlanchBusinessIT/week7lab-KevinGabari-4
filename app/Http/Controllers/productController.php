@@ -20,6 +20,11 @@ class productController extends AppBaseController
         $this->productRepository = $productRepo;
     }
 
+    public function displayGrid(Request $request)
+    {
+    $products=\App\Models\Product::all();
+    return view('products.displaygrid')->with('products',$products);
+    }
     /**
      * Display a listing of the product.
      *
